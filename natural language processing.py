@@ -1,2 +1,3 @@
 import nltk
-bltk.download('all')
+nltk.download("all")
+
