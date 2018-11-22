@@ -2,6 +2,7 @@ import nltk
 import random
 from nltk.corpus import movie_reviews
 
+# naive Bayes algorithm
 documents = [(list(movie_reviews.words(fileid)), category)
              for category in movie_reviews.categories()
              for fileid in movie_reviews.fileids(category)]
@@ -36,4 +37,6 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 print("Naive Bayes Algo accuracy:", (nltk.classify.accuracy(classifier, testing_set))*100,"%")
 #  this is getting multilied by 100 so the number will be in a percent form
 classifier.show_most_informative_features(15)
+
+
 
