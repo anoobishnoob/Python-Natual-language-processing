@@ -23,7 +23,7 @@ def find_features(document):
         features[w] = (w in words)
 
     return features
-print((find_features(movie_reviews.words('neg/cv000_29416.txt'))))
+#  print((find_features(movie_reviews.words('neg/cv000_29416.txt'))))
 
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
