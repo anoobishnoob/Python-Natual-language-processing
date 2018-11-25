@@ -36,7 +36,7 @@ testing_set = featuresets[1900:]
 classifier = nltk.NaiveBayesClassifier.train(training_set)
 print("Naive Bayes Algo accuracy:", (nltk.classify.accuracy(classifier, testing_set))*100,"%")
 #  this is getting multilied by 100 so the number will be in a percent form
-classifier.show_most_informative_features(15)
+classifier.show_most_informative_features(100)
 
 
 
