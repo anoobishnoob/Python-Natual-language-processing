@@ -1,6 +1,7 @@
 import nltk
 import random
 from nltk.corpus import movie_reviews
+import pickle
 
 # naive Bayes algorithm
 documents = [(list(movie_reviews.words(fileid)), category)
@@ -34,9 +35,21 @@ testing_set = featuresets[1900:]
 #  pos = prior ocurences x liklihood / evidence
 
 classifier = nltk.NaiveBayesClassifier.train(training_set)
+
+classifier_f = open("naivebayes.pickle","rb")
+classifier = pickle.load(classifier_f)
+classifier_f.close()
+
+
+
+
+
 print("Naive Bayes Algo accuracy:", (nltk.classify.accuracy(classifier, testing_set))*100,"%")
 #  this is getting multilied by 100 so the number will be in a percent form
 classifier.show_most_informative_features(100)
 
-
+# save_classifier = open("naivebayes.pickle","wb")
+# pickle.dump(classifier, save_classifier)
+# save_classifier.close()
+# this part is just creating it so I am commenting it out so it doesn't rewrite the data again, but keeping as a comment so I wont forget
 
