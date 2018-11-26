@@ -93,3 +93,4 @@ print("LinearSVC Algo accuracy:", (nltk.classify.accuracy(LinearSVC_classifier, 
 NuSVC_classifier = SklearnClassifier(NuSVC())
 NuSVC_classifier.train(training_set)
 print("NuSVC Algo accuracy:", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100,"%")
+# need to investigate bias now
